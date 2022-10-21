@@ -1,0 +1,66 @@
+@import url(reset.css);
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+}
+
+.clock {
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 10px solid #ccc;
+    position: relative;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.clock::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    background-color: #000;
+    z-index: 4;
+}
+
+.hands {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    width: 135px;
+    height: 4.5px;
+    background: #ccc;
+    border-radius: 2px;
+    transform-origin: right center;
+    transition: all .1s;
+    transition-timing-function: cubic-bezier(0, 2.52, 0.25, 1);
+}
+
+.hourHand {
+    width: 100px;
+    position: absolute;
+    left: calc(140px - 100px);
+    background-color: #000;
+    z-index: 3;
+}
+
+.minHand {
+    z-index: 2;
+}
+
+.secHand {
+    height: 1.1px;
+    background-color: rgb(17, 51, 110);
+    z-index: 1;
+}
